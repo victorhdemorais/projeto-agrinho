@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioTerra | O Futuro da Agricultura Regenerativa e Biodiversidade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="accessibility-bar">
+        <div class="container-header">
+            <span class="logo">Bio<span>Terra</span></span>
+            <div class="acc-controls">
+                <button id="btn-font-decrease" aria-label="Diminuir texto">A-</button>
+                <button id="btn-font-increase" aria-label="Aumentar texto">A+</button>
+                <button id="btn-contrast" aria-label="Alternar alto contraste">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 18a6 6 0 100-12v12z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <span class="tag">O Futuro do Nosso Solo</span>
+            <h1>Cultivando a vida através da <strong>Biodiversidade</strong></h1>
+            <p>Descubra como a Agricultura Regenerativa restaura a saúde do planeta, revitaliza comunidades e produz alimentos puros respeitando os ciclos da natureza.</p>
+            <div class="hero-actions">
+                <a href="#conteudo-interativo" class="btn-primary">Explorar Interações</a>
+                <a href="#sobre" class="btn-secondary">Saber Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Por que a Biodiversidade importa?</h2>
+                <p>Uma fazenda viva não cultiva apenas um produto. Ela sustenta um ecossistema inteiro.</p>
+            </div>
+            <div class="grid-features">
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Solo Vivo</h3>
+                    <p>Microorganismos e raízes profundas criam uma terra rica em nutrientes sem a necessidade de químicos nocivos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🐝</div>
+                    <h3>Fauna Ativa</h3>
+                    <p>Polinizadores, pássaros e insetos benéficos atuam como defensores naturais, equilibrando a plantação.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h3>Retenção de Água</h3>
+                    <p>Solos biodiversos absorvem e retêm a água da chuva com muito mais eficiência, combatendo a seca.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="conteudo-interativo" class="interactive-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Práticas Regenerativas em Foco</h2>
+                <p>Navegue pelos cartões interativos abaixo e descubra como transformamos áreas agrícolas em florestas produtivas.</p>
+            </div>
+            
+            <div class="carousel-container">
+                <div class="carousel-track" id="carousel-track">
+                    </div>
+                <div class="carousel-nav">
+                    <button id="carousel-prev" class="btn-nav" aria-label="Slide anterior">❮</button>
+                    <button id="carousel-next" class="btn-nav" aria-label="Próximo slide">❯</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dúvidas Frequentes</h2>
+                <p>Esclareça os principais pontos sobre como a regeneração funciona no dia a dia.</p>
+            </div>
+            <div class="accordion" id="faq-accordion">
+                </div>
+        </div>
+    </section>
+
+    <section class="cta-final">
+        <div class="cta-container">
+            <h2>Pronto para fazer parte dessa mudança?</h2>
+            <p>Seja você um estudante, produtor rural ou entusiasta do meio ambiente, o seu papel é fundamental para a regeneração global.</p>
+            <button class="btn-primary" onclick="alert('Obrigado pelo seu interesse! Juntos regeneramos o planeta.')">Quero Me Engajar</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container-footer">
+            <p>&copy; 2026 BioTerra. Cultivando um amanhã mais verde, biodiverso e sustentável.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

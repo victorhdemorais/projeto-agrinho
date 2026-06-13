@@ -1,0 +1,445 @@
+/* ==========================================================================
+   VARIÁVEIS E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+:root {
+    --primary: #2d6a4f;
+    --primary-light: #52b788;
+    --primary-dark: #1b4332;
+    --neutral-dark: #2d312e;
+    --neutral-light: #f4f7f5;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --radius: 16px;
+    --transition: all 0.3s ease;
+    
+    /* Tipografia Fluida */
+    --font-base: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+    --font-h1: clamp(2.2rem, 1.8rem + 2vw, 4rem);
+    --font-h2: clamp(1.8rem, 1.5rem + 1.5vw, 3rem);
+    --font-h3: clamp(1.3rem, 1.2rem + 0.5vw, 1.8rem);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--font-base);
+    color: var(--neutral-dark);
+    background-color: var(--neutral-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 3vw, 3rem);
+}
+
+/* ==========================================================================
+   BARRA DE ACESSIBILIDADE E HEADER
+   ========================================================================== */
+.accessibility-bar {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem clamp(1rem, 3vw, 3rem);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+}
+
+.logo span {
+    color: var(--primary-light);
+}
+
+.acc-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.acc-controls button {
+    background: var(--neutral-light);
+    border: 1px solid rgba(0,0,0,0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.acc-controls button:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* ==========================================================================
+   HERO SECTION (Fundo minimalista agradável)
+   ========================================================================== */
+.hero {
+    padding: clamp(4rem, 8vw, 12rem) 0;
+    background: radial-gradient(circle at 80% 20%, rgba(82, 183, 136, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 10% 80%, rgba(45, 106, 79, 0.08) 0%, transparent 40%),
+                var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 800px;
+    padding: 0 1.5rem;
+}
+
+.tag {
+    display: inline-block;
+    background-color: rgba(82, 183, 136, 0.15);
+    color: var(--primary-dark);
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: var(--font-h1);
+    line-height: 1.2;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 strong {
+    color: var(--primary);
+}
+
+.hero p {
+    font-size: clamp(1.1rem, 1rem + 0.3vw, 1.5rem);
+    color: #555;
+    margin-bottom: 2.5rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Botões Modernos */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(45, 106, 79, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-dark);
+    border: 2px solid var(--primary-dark);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-dark);
+    color: var(--white);
+}
+
+/* ==========================================================================
+   SEÇÕES GENÉRICAS E GRIDS
+   ========================================================================== */
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+}
+
+.section-header h2 {
+    font-size: var(--font-h2);
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.features {
+    padding: clamp(4rem, 6vw, 8rem) 0;
+    background-color: var(--white);
+}
+
+.grid-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.feature-card {
+    background-color: var(--neutral-light);
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(45, 106, 79, 0.1);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+    font-size: var(--font-h3);
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   CARROSSEL INTERATIVO
+   ========================================================================== */
+.interactive-section {
+    padding: clamp(4rem, 6vw, 8rem) 0;
+    background-color: var(--neutral-light);
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: var(--white);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: clamp(2rem, 5vw, 4rem);
+    text-align: center;
+    user-select: none;
+}
+
+.carousel-badge {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    background: rgba(82, 183, 136, 0.15);
+    color: var(--primary-dark);
+    font-weight: 600;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.carousel-item h3 {
+    font-size: var(--font-h3);
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    padding: 0 1rem;
+}
+
+.btn-nav {
+    background: var(--white);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: var(--transition);
+    color: var(--primary-dark);
+}
+
+.btn-nav:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* ==========================================================================
+   FAQ ACORDEÃO
+   ========================================================================== */
+.faq {
+    padding: clamp(4rem, 6vw, 8rem) 0;
+    background-color: var(--white);
+}
+
+.accordion {
+    max-width: 750px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.accordion-item {
+    border-radius: var(--radius);
+    background-color: var(--neutral-light);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.accordion-header {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.5rem;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    padding: 0 1.5rem;
+    color: #555;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.accordion-item.active .accordion-content {
+    padding: 1rem 1.5rem 1.5rem;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+/* ==========================================================================
+   CTA FINAL E RODAPÉ
+   ========================================================================== */
+.cta-final {
+    padding: clamp(4rem, 6vw, 8rem) 0;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    color: var(--white);
+    text-align: center;
+}
+
+.cta-container {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.cta-final h2 {
+    font-size: var(--font-h2);
+    margin-bottom: 1rem;
+}
+
+.cta-final p {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-final .btn-primary {
+    background-color: var(--white);
+    color: var(--primary-dark);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.cta-final .btn-primary:hover {
+    background-color: var(--neutral-light);
+    transform: translateY(-2px);
+}
+
+footer {
+    background-color: #1a1e1b;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   BLINDAGEM DO MODO DE CONTRASTE (ALTA ESPECIFICIDADE)
+   ========================================================================== */
+body.high-contrast, body.high-contrast *:not(i):not(.icon) {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 1px solid #ff0 !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+body.high-contrast a, body.high-contrast button {
+    color: #ff0 !important;
+    text-decoration: underline !important;
+    font-weight: bold !important;
+}
